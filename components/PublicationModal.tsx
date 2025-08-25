@@ -140,7 +140,7 @@ export default function PublicationModal({ publication, isOpen, onClose }: Publi
                   className="w-full h-full object-contain"
                   controls
                   autoPlay={false}
-                  poster={displayImage}
+                  poster={displayImage ?? undefined}
                 >
                   <source src={displayVideo} type="video/mp4" />
                   <source src={displayVideo} type="video/webm" />

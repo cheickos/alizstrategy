@@ -46,7 +46,7 @@ export default function PublicationsEditor({ onSave }: PublicationsEditorProps) 
   const [formData, setFormData] = useState<Partial<Publication>>({
     title: '',
     description: '',
-    type: 'multi',
+  type: 'multi',
     fileUrl: '',
     thumbnailUrl: '',
     videoUrl: '',
@@ -940,7 +940,7 @@ export default function PublicationsEditor({ onSave }: PublicationsEditorProps) 
                 )}
               </div>
 
-              {formData.type !== 'multi' && (
+              {['video', 'image', 'document'].includes(formData.type as string) && (
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Image de couverture {formData.type === 'video' ? '(optionnel)' : formData.type === 'document' ? '(recommandé pour aperçu)' : ''}
